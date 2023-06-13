@@ -8,16 +8,16 @@
 @toolbar-button-box-shadow: none;
 @toolbar-button-chevron-color: fade(@toolbar-button-icon-color, 50%);
 @toolbar-button-chevron-width: @base-value;
-@toolbar-button-font-size: @font-size-sm;
+@toolbar-button-font-size: 14px;
 @toolbar-button-font-style: normal;
 @toolbar-button-font-weight: @font-weight-normal;
 @toolbar-button-height: 28px;
 @toolbar-button-icon-color: @toolbar-button-text-color;
-@toolbar-button-spacing-x: 1px;
-@toolbar-button-spacing-y: 5px;
-@toolbar-button-text-color: @text-color;
+@toolbar-button-spacing-x: 0;
+@toolbar-button-spacing-y: 2px;
+@toolbar-button-text-color: #a1a1a1;
 @toolbar-button-text-transform: none;
-@toolbar-button-width: 34px;
+@toolbar-button-width: 36px;
 
 @toolbar-button-active-background-color: @active-background-color;
 @toolbar-button-active-border: @toolbar-button-active-background-color;
@@ -130,6 +130,7 @@
       border: @toolbar-button-hover-border;
       box-shadow: @toolbar-button-hover-box-shadow;
       color: @toolbar-button-hover-text-color;
+      cursor: pointer;
 
       svg {
         fill: @toolbar-button-hover-icon-color;
@@ -153,6 +154,7 @@
     border: @toolbar-button-enabled-border;
     box-shadow: @toolbar-button-enabled-box-shadow;
     color: @toolbar-button-enabled-text-color;
+    cursor: pointer;
 
     > * {
       transform: @toolbar-button-enabled-transform;

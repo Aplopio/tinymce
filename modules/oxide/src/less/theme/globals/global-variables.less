@@ -13,7 +13,7 @@
 @background-color: #fff;
 @base-value: 16px;
 @color-black: #222f3e;
-@color-tint: #006ce7;
+@color-tint: #e6e6e6;
 @color-white: #fff;
 @color-error: #c00;
 @color-success: #78AB46;
@@ -28,12 +28,12 @@
 @text-color: contrast(@background-color, @color-black, @color-white);
 @text-color-muted: contrast(@background-color, fade(@color-black, 70%), fade(@color-white, 50%));
 
-@active-background-color: contrast(@background-color, darken(desaturate(@color-tint, 15%), 5%), lighten(desaturate(@color-tint, 30%), 11%));
-@active-text-color: @color-white;
-@enabled-active-background-color: lighten(@color-tint, 25%);
-@enabled-background-color: contrast(@background-color, lighten(@color-tint, 40%), @color-white);
+@active-background-color: #e6e6e6;
+@active-text-color: #2b3334;
+@enabled-active-background-color: @color-tint;
+@enabled-background-color: @color-tint;
 @enabled-text-color:  @color-black;
-@hover-background-color: contrast(@background-color, lighten(desaturate(@color-tint, 20%), 10%), lighten(desaturate(@color-tint, 30%), 20%));
+@hover-background-color: @color-tint;
 
 // Some useful generic variables
 @panel-border-radius: 6px; // Dialogs, menues etc.

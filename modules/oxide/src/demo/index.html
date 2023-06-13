@@ -20,19 +20,25 @@
         <select name="contentcss" id="content"></select>
     </div>
     <textarea>
-      <h1>The Incomparable Yosemite</h1>
-      <p>The most famous and accessible of these ca&ntilde;on valleys,&nbsp;and also the one that presents their most striking and sublime features on the grandest scale, is the <a title="Link to Wikipedia about Yosemite national park" href="https://en.wikipedia.org/wiki/Yosemite_National_Park">Yosemite</a>, situated in the basin of the <span style="color: #9b59b6;">Merced River at an elevation of 4000 feet above the level of the sea</span>. It is about&nbsp;<span style="background-color: #fffcc7;">seven miles long, half a mile to a mile wide, and nearly a mile deep</span> in the&nbsp;solid granite flank&nbsp;of the range.&nbsp;</p>
-      <blockquote>
-      <p>Down through the middle of the Valley flows the crystal Merced, <span style="text-decoration: line-through;">River of Mercy</span>, peacefully quiet, reflecting lilies and trees and the onlooking rocks;</p>
-      </blockquote>
-      <p>The walls are made up of rocks, mountains in size, partly separated from each other by side ca&ntilde;ons, and they are so sheer in front, and so compactly and harmoniously arranged on a level floor, that the Valley, comprehensively seen, <strong>looks like an immense hall or temple lighted from above</strong>.</p>
-      <p>Awful in stern, immovable majesty, how softly these rocks are adorned, and how fine and reassuring the company they keep: their feet among beautiful groves and meadows, their brows in the sky, a thousand flowers leaning confidingly against their feet, bathed in floods of water, floods of light, while the snow and waterfalls, the winds and avalanches and clouds shine and sing and wreathe about them as the years go by, and myriads of small winged creatures</p>
+      <h1>Heading 1</h1>
+<h2>Heading 2</h2>
+<h3>Heading 3</h3>
+<h4>Heading 4</h4>
+<h5>Heading 5</h5>
+<h6>Heading 6</h6>
+
+
+<pre>Preformatted text</pre>
+
+<p>This is a job description with multiple styles.</p>
       <ul>
-      <li>birds</li>
-      <li>bees</li>
-      <li>butterflies</li>
+    <li>bullet list</li>
+    <li>item 2</li>
       </ul>
-      <p>give glad animation and help to make all the air into music. Down through the middle of the Valley flows the crystal Merced, River of Mercy, peacefully quiet, reflecting lilies and trees and the onlooking rocks</p>
+      <ol>
+    <li>Numbered list</li>
+    <li>Item 2</li>
+      </ol>
     </textarea>
 
     <script>
@@ -40,18 +46,40 @@
         const contentcss = localStorage.getItem('contentcss') || 'default';
 
         tinymce.init({
-            selector:'textarea',
-            plugins: 'autoresize advlist anchor autolink charmap code codesample directionality fullscreen help image insertdatetime link lists media nonbreaking pagebreak preview searchreplace table template toc visualblocks visualchars wordcount',
-            toolbar: 'undo redo | formatselect | bold italic strikethrough forecolor backcolor blockquote | link table image media | alignleft aligncenter alignright alignjustify | numlist bullist outdent indent | removeformat fullscreen',
-            toolbar_mode: 'floating',
-            toolbar_sticky: true,
-            height: 600,
-            skin_url: '/skins/ui/' +  skin,
-            content_css: '/skins/content/' + contentcss + '/content.css',
-            templates: [
-              {title: 'Some title', description: 'Some description', content: 'Some content'},
-            ],
-        });
+          selector:'textarea',
+          height: 402,
+          width: 652,
+          language: 'en',
+          convert_urls: true,
+          plugins: ['link', 'lists'],
+          paste_auto_cleanup_on_paste: true,
+          paste_data_images: false,
+          paste_webkit_styles: 'none',
+          remove_linebreaks: false,
+          strict_loading_mode: 1,
+          menubar: false,
+          toolbar: 'blocks | bold italic underline hr | link unlink | bullist numlist | undo redo | pastetext',
+          statusbar: false,
+          icons: "hire-v1",
+          icons_url: "/icons.js",
+          skin_url: '/skins/ui/hire-v1',
+          content_css: '/skins/content/' + contentcss + '/content.css',
+          setup: function (editor) {
+            // editor.ui.registry.addToggleButton('custompastetext', {
+            //   type: 'togglebutton',
+            //   icon: 'pastetext',
+            //   enabled: true,
+            //   onSetup: (buttonApi) => {
+            //     editor.on('PastePlainTextToggle', (e) => {
+            //       buttonApi.setActive(e.state);
+            //     });
+            //   },
+            //   onAction: (_buttonApi) => {
+            //     // toggles setting
+            //   }
+            // });
+          }
+          });
 
         function addOptionTo (select) {
             return function (_skin) {

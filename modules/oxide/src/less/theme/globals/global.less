@@ -2,9 +2,9 @@
 // Global styling
 //
 
-@tinymce-border-color: @border-color;
-@tinymce-border-radius: 10px;
-@tinymce-border-width: 2px;
+@tinymce-border-color: #ccc;
+@tinymce-border-radius: 0px;
+@tinymce-border-width: 1px;
 @tinymce-box-shadow: none;
 @tinymce-separator-color: contrast(@background-color, darken(@border-color, 4.5%), lighten(@border-color, 4.5%));
 @editor-header-inline-background-color: @background-color;
@@ -34,10 +34,11 @@
 
   .tox-editor-header {
     background-color: @editor-header-inline-background-color;
-    border: @tinymce-border-width solid @tinymce-border-color;
+    border: 0 solid @tinymce-border-color;
     border-radius: @tinymce-border-radius;
     box-shadow: @tinymce-box-shadow;
     overflow: hidden;
+    padding: 0 0;
   }
 }
 

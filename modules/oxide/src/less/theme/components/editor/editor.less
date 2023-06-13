@@ -2,9 +2,9 @@
 // Editor
 //
 
-@editor-header-border: none;
-@editor-header-box-shadow: 0 2px 2px -2px fade(@color-black, 10%), 0 8px 8px -4px fade(@color-black, 7%);
-@editor-header-sticky-box-shadow: 0 2px 2px -2px fade(@color-black, 20%), 0 8px 8px -4px fade(@color-black, 15%);
+@editor-header-border: 2px;
+@editor-header-box-shadow: 0;
+@editor-header-sticky-box-shadow: 0;
 @editor-bottom-header-box-shadow: none;
 @editor-bottom-header-sticky-box-shadow: @editor-header-sticky-box-shadow;
 @editor-header-sticky-background-color: if((alpha(@toolbar-background-color) > 0), transparent, @background-color); // If @toolbar-background-color is set to transparent, then set the sticky toolbar background color to be another color to not be transparent over content.
@@ -22,6 +22,7 @@
   }
 
   .tox-editor-header {
+    border: 0 solid #ccc;
     display: grid;
     grid-template-columns: 1fr min-content;
     // Escape the highlight of content area when the toolbar is sticky
@@ -32,7 +33,7 @@
     background-color: @background-color;
     border-bottom: @editor-header-border;
     box-shadow: @editor-header-box-shadow;
-    padding: @pad-xs 0;
+    padding: 0 0;
 
     &:not(.tox-editor-dock-transition) {
       transition: box-shadow .5s;
@@ -53,7 +54,7 @@
   .tox-editor-header {
     background-color: @background-color;
     box-shadow: @editor-header-sticky-box-shadow;
-    padding: @pad-xs 0;
+    padding: 0 0;
   }
 
   &.tox-tinymce--toolbar-bottom {
